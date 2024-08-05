@@ -2,19 +2,36 @@ Questions regarding Uploaded Image Classification:
 
 1. Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
 
-Answer: 
+Answer: Yes, all three models (AlexNet, ResNet, and VGG) classified Dog_01.jpg as a "german shepherd, german shepherd dog, german police dog, alsatian".
 
 
 2. Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
 
 Answer: 
+AlexNet: Classified Dog_01.jpg as german shepherd, but Dog_02.jpg as brabancon griffon
+ResNet: Classified both Dog_01.jpg and Dog_02.jpg as german shepherd
+VGG: Classified Dog_01.jpg as german shepherd, but Dog_02.jpg as brabancon griffon
 
 
 3. Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
 
-Answer: 
+Answer: The images are actually named RedPanda_01.jpg and Car_01.jpg in the results. All three models correctly classified these as not being dogs:
+RedPanda_01.jpg:
 
+All models: classified as "lesser panda, red panda, panda, bear cat, cat bear, ailurus fulgens"
+
+Car_01.jpg:
+
+AlexNet and VGG: classified as "sports car, sport car"
+ResNet: classified as "cab, hack, taxi, taxicab"
 
 4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
 
-Answer:
+Answer: ResNet appears to have performed the best for the following reasons:
+
+1. It correctly identified both dog images (Dog_01.jpg and Dog_02.jpg) as the same breed (german shepherd), while AlexNet and VGG misclassified Dog_02.jpg.
+2. It correctly classified the non-dog images (RedPanda_01.jpg and Car_01.jpg) as not being dogs.
+3. It achieved 100% accuracy in breed classification, compared to 50% for AlexNet and VGG.
+4. It maintained 100% accuracy in distinguishing dogs from non-dogs, like the other models.
+
+While ResNet misclassified the specific type of car (taxi instead of sports car), it still correctly identified it as a vehicle and not a dog. Overall, ResNet showed the most consistent and accurate performance across all four images, especially in dog breed identification, which is a key aspect of this classification task.
